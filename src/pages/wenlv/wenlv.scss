@@ -1,0 +1,45 @@
+page-wenlv {
+  .cont_cont{
+    float: left;
+    width: 100%;
+  }
+  .page-item{
+    float: left;
+    width: 100%;
+    margin-bottom: 10px;
+    position: relative;
+  }
+  .page-item img{
+    float: left;
+    width: 100%;
+    height: 50vw;
+  }
+  .page-item p{
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 10vw;
+    padding: 10px;
+    font-size: 2rem;
+    color: #fff;
+    text-align: center;
+  }
+  .page-item span{
+    position: absolute;
+    width: 100%;
+    top: 0;
+    height: 100%;
+    left: 0;
+    background: rgba(0,0,0,0.4);
+  }
+  .page-item p:after{
+    content: '';
+    display: block;
+    position: absolute;
+    width: 50vw;
+    height: 2px;
+    background: #ccc;
+    bottom: 0;
+    right: 25%;
+  }
+}

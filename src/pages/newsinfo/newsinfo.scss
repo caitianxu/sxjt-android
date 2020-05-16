@@ -1,0 +1,125 @@
+page-newsinfo {
+  .news-title{
+    float: left;
+    width: 100%;
+    padding: 30px 15px 5px 15px;
+    font-size: 1.8rem;
+    text-align: center;
+  }
+  .news-time{
+    color: #999;
+    text-align: center;
+    float: left;
+    width: 100%;
+    font-size: 12px;
+    margin-bottom: 15px;
+  }
+  .news-cover{
+    float: left;
+    width: 100%;
+    padding: 0 16px;
+    margin-bottom: 15px;
+  }
+  .news-cover img{
+    float: left;
+    width: 100%;
+  }
+  .new-content{
+    float: left;
+    width: 100%;
+    padding: 0 16px;
+    margin-bottom: 15px;
+    text-align: justify;
+  }
+  .new-content p{
+    margin: 0;
+  }
+  .rback{
+    width: 40px;
+    height: 30px;
+    float: left;
+    background: url('../assets/imgs/jiantou.png') no-repeat center center / 20px auto;
+  }
+  .submit{
+    float: right;
+    width: 60px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+  }
+  .footer-form{
+    float: left;
+    width: calc(100% - 110px);
+    border: 1px #ddd solid;
+  }
+  .footer-form input{
+    margin: 6px 8px 6px 8px;
+  }
+  .pllist{
+    float: left;
+    width: 100%;
+    padding: 0 16px;
+  }
+  .pllist .plink{
+    text-align: center;
+    font-size: 12px;
+    border-top: 1px #eee solid;
+    padding-top: 16px;
+    display: inline-block;
+    width: 100%;
+    margin-top: 0;
+  }
+  .plitem{
+    float: left;
+    width: 100%;
+    margin-top: 15px;
+  }
+  .plitem .m-cover{
+    float: left;
+    width: 30px;
+    height: 30px;
+  }
+  .plitem .m-cover img{
+    border-radius: 50%;
+    float: left;
+    width: 100%;
+    height: 100%;
+  }
+  .m-detail{
+    float: left;
+    width: calc(100% - 30px);
+    padding-left: 10px;
+    border-bottom: 1px #ddd dashed;
+    padding-bottom: 10px;
+  }
+  .m-row{
+    float: left;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  .m-row label{
+    float: left;
+    width: 50%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    color: steelblue;
+  }
+  .m-row span{
+    float: left;
+    width: 50%;
+    text-align: right;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    color: #999;
+    font-size: 12px;
+  }
+  .m-col{
+    float: left;
+    width: 100%;
+    color: #666;
+    font-size: 12px;
+  }
+}

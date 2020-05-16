@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-buttons end>
+      <button ion-button icon-only (tap)="saomaAddBook()">
+        <ion-icon class="iconfont icon-saoma"></ion-icon>
+      </button>
+      <button ion-button icon-only (tap)="toSearch()">
+        <ion-icon class="iconfont icon-search"></ion-icon>
+      </button>
+      <button ion-button icon-only (tap)="toUser()">
+        <ion-icon class="iconfont icon-user"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title start>{{service.txtPage[4]}}</ion-title>
+  </ion-navbar>
+
+  <ion-toolbar id="Subheader">
+    <ion-toolbar>
+      <ion-title>
+        <ion-scroll scrollX="true">
+          <div class="scroll-list">
+            <span class="scroll-item" *ngFor="let item of topData" (tap)="getlistData(item.article_cat_id)" [ngClass]="{'active': param.cat_id == item.article_cat_id}">{{item.article_cat_name}}</span>
+          </div>
+        </ion-scroll>
+      </ion-title>
+    </ion-toolbar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="cont_cont">
+    <div class="page-item" *ngFor="let item of listData" (click)="toNewsinfoPage(item.article_id)">
+      <img src="{{service.ctxPath + item.cover_url_small}}">
+      <span>
+        <p>{{item.article_title}}</p>
+      </span>
+    </div>
+    <p class="row_mess">已经没有更多数据</p>
+  </div>
+</ion-content>

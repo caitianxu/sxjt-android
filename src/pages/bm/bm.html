@@ -1,0 +1,12 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title start>活动报名记录</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <ion-list>
+    <button ion-item *ngFor="let item of items" (click)="itemSelected(item.article_id)">
+     {{item.article_title}}
+    </button>  
+  </ion-list>
+</ion-content>

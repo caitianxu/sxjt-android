@@ -1,0 +1,80 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-buttons end>
+      <button ion-button icon-only (tap)="to_seting()">
+        设置
+      </button>
+    </ion-buttons>
+    <ion-title start>个人中心</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <div class="header-m">
+    <div class="msg">
+      <div class="tx">
+        <img src="{{service.ctxPath + service.LoginUserInfo.icon}}">
+      </div>
+      <div class="nameId">
+        <p style="margin-bottom: 10%;" id="member_name">
+          {{service.LoginUserInfo.nick_name}}
+        </p>
+
+        <p style="font-size: 14px;font-weight: 100;">
+          <label id="member_id">账号ID:
+            <span>{{service.LoginUserInfo.member_id}}</span>
+          </label>
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="col wire">
+      <span style="color: #88c003">
+        {{convertData.today}}min
+      </span>
+      <p>今日已读</p>
+    </div>
+    <div class="col wire">
+      <span style="color: #ff9600">
+        {{convertData.total}}h
+      </span>
+      <p>累计时长</p>
+    </div>
+    <div class="col wire">
+      <span style="color: #ff5e5e">
+        {{convertData.book}}本
+      </span>
+      <p>已读图书</p>
+    </div>
+    <div class="col">
+      <span style="color: #5a92ff">
+        {{convertData.order}}
+      </span>
+      <p>阅读排名</p>
+    </div>
+  </div>
+
+
+  <ion-list>
+    <button ion-item (tap)="toReadCode()">
+      图书收藏
+    </button>
+    <button ion-item (tap)="tosc()">
+      音频收藏
+    </button>
+    <button ion-item (tap)="tova()">
+      播放记录
+    </button>
+    <button ion-item (tap)="toReviews()">
+      我的评论
+    </button> 
+    <button ion-item (tap)="baoming()">
+      报名记录
+    </button> 
+  </ion-list>
+  <div class="p-footer" style="text-align: center;color: #000" (tap)="tologin()">
+    切换账号
+  </div>
+  <p style="text-align: center;font-size: 12px;color: #bbb; margin-top: 15px;">{{service.version}}</p>
+</ion-content>

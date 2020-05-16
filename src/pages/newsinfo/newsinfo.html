@@ -1,0 +1,44 @@
+<ion-content>
+  <base href="http://cjszyun.cn" />
+  <div *ngIf="newsdata">
+    <div class="news-title">{{newsdata.article_title}}</div>
+    <div class="news-time">{{newsdata.publish_time}} &nbsp;&nbsp;{{newsdata.click_count}}次阅读</div>
+    <div class="news-cover">
+      <img src="{{service.ctxPath + newsdata.cover_url_small}}">
+    </div>
+    <div class="new-content" [innerHTML]="newsdata.article_content"></div>
+  </div>
+
+  <div style="text-align: center;padding: 15px;" *ngIf="article_type && article_type =='hot'">
+      <button ion-button (tap)="toBaomingPage()" color="danger" round>活动报名</button>
+  </div>
+  <div class="pllist">
+    <div class="plitem" *ngFor="let pl of plList">
+      <div class="m-cover">
+          <img *ngIf="pl.icon" src="{{service.ctxPath + pl.icon}}">
+          <img *ngIf="!pl.icon" src="{{service.ctxPath + '/static/mobile/img/touxiang.png'}}">
+      </div>
+      <div class="m-detail">
+        <div class="m-row">
+          <label class="u-name">{{pl.nick_name}}</label>
+          <span>{{pl.create_time.substr(5,11)}}</span>
+        </div>
+        <div class="m-col">
+          {{pl.review_content}}
+        </div>
+      </div>
+    </div>
+    <p *ngIf="!plparam.more && plList.length" class="plink">没有更多啦</p>
+    <p *ngIf="!plparam.more && !plList.length" class="plink">还没有任何评论</p>
+    <p *ngIf="plparam.more && plList.length" class="plink" (tap)="newsPl()">加载更多评论</p>
+  </div>
+</ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <button class="rback" (tap)="navPop()"></button>
+    <form class="footer-form">
+        <ion-input placeholder="Text Input" name="review_content" [(ngModel)]="review_content" placeholder="输入你想说的..."></ion-input>
+    </form>
+    <button class="submit" ion-button (click)="sendPl()">提交</button>
+  </ion-toolbar>
+</ion-footer>

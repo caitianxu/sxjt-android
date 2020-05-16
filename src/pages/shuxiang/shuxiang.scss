@@ -1,0 +1,111 @@
+page-shuxiang {
+  .banner a {
+    display: inherit;
+    position: relative;
+  }
+  .banner a img {
+    height: 15rem;
+    width: 100%;
+    vertical-align: bottom;
+  }
+  .banner a p {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    color: #fff;
+    height: 2.5rem;
+    background: rgba(0, 0, 0, .4);
+    line-height: 2.5rem;
+    font-size: 1.2rem;
+    overflow: hidden;
+    padding: 0 0.5rem;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+  #content>div>p {
+    padding: 0.5rem;
+  }
+  #content>div>.hot_cont {
+    padding: 0 1rem;
+  }
+  p .more {
+    float: right;
+    margin-top: 0.1rem;
+    color: #999;
+    text-decoration: none;
+  }
+  #content>div>.hot_cont:after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+  /*图书*/
+  .hot_book>.hot_cont>.book_list {
+    float: left;
+    width: calc(33.33% - 0.67rem);
+    width: -moz-calc(33.33% - 0.67rem);
+    width: -webkit-calc(33.33% - 0.67rem);
+    /*padding:0 1rem 0.5rem;*/
+  }
+  .hot_book>.hot_cont>.book_list:nth-child(3n+2) {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+  /*视频*/
+  .hot_video>.hot_cont>.video_list {
+    float: left;
+    width: calc(50% - 0.5rem);
+    width: -moz-calc(50% - 0.5rem);
+    width: -webkit-calc(50% - 0.5rem);
+    /*padding:0 1rem 0.5rem;*/
+  }
+  .hot_video>.hot_cont>.video_list:nth-child(2n+1) {
+    margin-right: 0.5rem;
+  }
+  .hot_video>.hot_cont>.video_list:nth-child(2n) {
+    margin-left: 0.5rem;
+  }
+  /*音频*/
+  .hot_audio>.hot_cont>.audio_list {
+    float: left;
+    width: calc(33.33% - 0.67rem);
+    width: -moz-calc(33.33% - 0.67rem);
+    width: -webkit-calc(33.33% - 0.67rem);
+    /*padding:0 1rem 0.5rem;*/
+  }
+  .hot_audio>.hot_cont>.audio_list:nth-child(3n+2) {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+  .img_box {
+    width: 100%;
+    box-shadow: 0 4px 4px #eee;
+    height: 35vw;
+    background: #f5f8fa;
+  }
+  .hot_video .img_box{
+    height: 25vw;
+  }
+  .img_box img {
+    width: 100%;
+    height: 100%;
+  }
+  .hot_cont span {
+    padding: 4px 2px;
+    display: inline-block;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-weight: 300;
+    text-align: center;
+    color: #696969;
+  }
+  .hot_book,.hot_video,.hot_audio{
+    float: left;
+    width: 100%;
+  }
+  a em{ 
+    font-style: normal;
+  }
+}

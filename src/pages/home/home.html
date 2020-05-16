@@ -1,0 +1,92 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-buttons end>
+      <button ion-button icon-only (tap)="saomaAddBook()">
+        <ion-icon class="iconfont icon-saoma"></ion-icon>
+      </button>
+      <button ion-button icon-only (tap)="toSearch()">
+        <ion-icon class="iconfont icon-search"></ion-icon>
+      </button>
+      <button ion-button icon-only (tap)="toUser()">
+        <ion-icon class="iconfont icon-user"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title start>{{service.txtPage[0]}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <div class="topSolid">
+    <ion-slides>
+      <ion-slide *ngFor="let item of pageWiper">
+        <a (click)="toNewsinfoPage(item.article_id)">
+          <img src="{{service.ctxPath + item.cover_url}}" />
+          <h1>{{item.article_title}}</h1>
+        </a>
+      </ion-slide>
+    </ion-slides>
+  </div>
+  <div class="cont_nav">
+    <ul style="padding:0.5rem;" *ngIf="papClass && papClass.length > 3">
+      <li (tap)="tonNewsInfo(papClass[0].article_cat_id,papClass[0].article_cat_name)">
+        <div class="nav_list_l" style="padding-right:1rem;">
+          <h3 style="text-align:right;">{{papClass[0].article_cat_name}}</h3>
+          <p style="text-align:right;">{{papClass[0].remark}}</p>
+        </div>
+        <div class="nav_list_r">
+          <i class="iconfont icon_img"></i>
+        </div>
+        <div style="clear: both;"></div>
+      </li>
+      <li (tap)="tonNewsInfo(papClass[1].article_cat_id,papClass[1].article_cat_name)">
+        <div class="nav_list_r" style="left: 1.5rem;right: 0;">
+          <i class="iconfont icon_img"></i>
+        </div>
+        <div class="nav_list_l" style="float: right;padding-left: 1.5rem;">
+          <h3>{{papClass[1].article_cat_name}}</h3>
+          <p>{{papClass[1].remark}}</p>
+        </div>
+        <div style="clear: both;"></div>
+      </li>
+      <li style="border-bottom:1px solid #eee;" (tap)="tonNewsInfo(papClass[2].article_cat_id,papClass[2].article_cat_name)">
+        <div class="nav_list_l" style="padding-right:1rem;">
+          <h3 style="text-align:right;">{{papClass[2].article_cat_name}}</h3>
+          <p style="text-align:right;">{{papClass[2].article_cat_name}}</p>
+        </div>
+        <div class="nav_list_r" style="top: 1.5rem;bottom:auto;">
+          <i class="iconfont icon_img"></i>
+        </div>
+        <div style="clear: both;"></div>
+      </li>
+      <li style="border-bottom:1px solid #eee;" (tap)="tonNewsInfo(papClass[3].article_cat_id,papClass[3].article_cat_name)">
+        <div class="nav_list_r" style="left: 1.5rem;right: 0;top: 1.5rem;bottom:auto;">
+          <i class="iconfont icon_img"></i>
+        </div>
+        <div class="nav_list_l" style="padding-left:1.5rem;float: right;">
+          <h3>{{papClass[3].article_cat_name}}</h3>
+          <p>{{papClass[3].article_cat_name}}</p>
+        </div>
+        <div style="clear: both;"></div>
+      </li>
+      <div style="clear: both;"></div>
+    </ul>
+  </div>
+  <div class="cont_parent">
+    <div class="cont_tab">
+      <div class="cont_tab-li li-1" (tap)="loadPageData('news')" [ngClass]="{'selected': param.type == 'news'}">最新资讯</div>
+      <div class="cont_tab-li li-2" (tap)="loadPageData('hot')" [ngClass]="{'selected': param.type == 'hot'}">热门活动</div>
+    </div>
+    <div class="con-tab-data">
+      <div class="con-tab-item" *ngFor="let item of listData" (click)="toNewsinfoPage(item.article_id, param.type)">
+        <div class="item-detail">
+          <label>{{item.article_title}}</label>
+          <p>{{item.article_cat_name}}</p>
+        </div>
+        <div class="tab-item-cover">
+          <img src="{{service.ctxPath + item.cover_url_small}}">
+        </div>
+      </div>
+    </div>
+    <p class="row_mess">已经没有更多数据</p>
+  </div>
+</ion-content>

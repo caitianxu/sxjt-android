@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title start>活动报名</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+
+    <ion-item>
+      <ion-label fixed>姓名</ion-label>
+      <ion-input type="text" value="" [(ngModel)]="userName"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label fixed>手机号</ion-label>
+      <ion-input type="text" [(ngModel)]="phone"></ion-input>
+    </ion-item>
+
+  </ion-list>
+  <div padding>
+      <button ion-button full (tap)="tologin()">立即报名</button>
+  </div>
+</ion-content>
