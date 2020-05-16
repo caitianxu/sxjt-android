@@ -7,7 +7,33 @@
   height: 20px;
   width: 20px;
 }
-
+.tabs-md .tabbar{
+  background: #ffffff;
+}
+.ion-md-rack,
+.ion-ios-rack-outline {
+  background: url('../assets/icon/rack.png') no-repeat center center / auto 20px;
+}
+.tabs-md .tab-button[aria-selected=true] .ion-md-rack,
+.tabs-ios .tab-button[aria-selected=true] .ion-ios-rack {
+  background: url('../assets/icon/rack_r.png') no-repeat center center / auto 20px;
+}
+.ion-md-home1,
+.ion-ios-home1-outline {
+  background: url('../assets/icon/home.png') no-repeat center center / auto 20px;
+}
+.tabs-md .tab-button[aria-selected=true] .ion-md-home1,
+.tabs-ios .tab-button[aria-selected=true] .ion-ios-home1 {
+  background: url('../assets/icon/home_r.png') no-repeat center center / auto 20px;
+}
+.ion-md-me,
+.ion-ios-me-outline {
+  background: url('../assets/icon/me.png') no-repeat center center / auto 20px;
+}
+.tabs-md .tab-button[aria-selected=true] .ion-md-me,
+.tabs-ios .tab-button[aria-selected=true] .ion-ios-me {
+  background: url('../assets/icon/me_r.png') no-repeat center center / auto 20px;
+}
 .ion-md-fota,
 .ion-ios-fota-outline {
   background: url('../assets/icon/fota.png') no-repeat center center / auto 20px;
@@ -126,7 +152,7 @@
 }
 
 #Subheader .scroll-list .active {
-  color: #488aff;
+  color: #fd6655;
 }
 
 #Subheader .toolbar-content-md {

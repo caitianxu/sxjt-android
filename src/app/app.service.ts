@@ -25,7 +25,7 @@ export class AppService {
   book_tiger: any; //定时器
   network: any = 'wifi';
   unbarcodeScanner = false;
-  txtPage: any = ["舞动夷陵", "活动指南", "古今夷陵", "书香夷陵", "文旅地图"];
+  txtPage: any = ["微悦读", "活动指南", "古今夷陵", "书香夷陵", "文旅地图"];
   constructor(private platform: Platform,
     public loadingCtrl: LoadingController,
     public http: Http,
@@ -34,7 +34,7 @@ export class AppService {
     public barcodeScanner: BarcodeScanner,
     public statusBar: StatusBar,
     private codePush: CodePush) {
-    this.ctxPath = 'http://cjszyun.cn';
+    this.ctxPath = 'http://www.tuibook.com';
   }
   /**
    * 服务初始化

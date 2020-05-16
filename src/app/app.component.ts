@@ -89,14 +89,6 @@ export class MyApp {
 
   //登录
   login(param: any) {
-    var ps = {
-      account: param.account,
-      pwd: param.pwd,
-      token_type: 'weixin',
-      org_id: 296,
-      clinet_type: 'QY'
-    }
-    // this.service.post('http://cjszyun.cn/api/hbjt/login', ps).then(success => {
     this.service.post('/v2/api/mobile/login', param).then(success => {
       console.log(success)
       if (success.code == 0) {
@@ -110,16 +102,6 @@ export class MyApp {
         //隐藏启动页
         this.splashScreen.hide();
         this.service.init();
-        // if (success.data.org_id != 296) {
-        //   //绑定机构
-        //   this.service.post('/v2/api/mobile/bindOrg', {
-        //     token: success.data.token,
-        //     orgId: 296
-        //   }).then(res => {
-        //     console.log(res)
-        //     this.service.LoginUserInfo.org_id = 296;
-        //   })
-        // }
       }
       else {
         localStorage.removeItem('LoginUserInfo');

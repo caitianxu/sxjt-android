@@ -21,18 +21,10 @@ export class LoginPage {
   }
   tologin() {
     if (this.userName && this.passWord) {
-      var ps = {
-        account: this.userName,
-        pwd: this.passWord,
-        token_type: 'weixin',
-        org_id: 296,
-        clinet_type: 'QY'
-      }
       var param = {
         account: this.userName,
         pwd: this.passWord
       }
-      // this.service.post('http://cjszyun.cn/api/hbjt/login', ps).then(success => {
       this.service.post('/v2/api/mobile/login', param).then(success => {
         console.log(success)
         if (success.code == 0) {
